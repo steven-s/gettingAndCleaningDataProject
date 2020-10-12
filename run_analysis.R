@@ -84,5 +84,5 @@ runAnalysis <- function(destdir=getwd()) {
 }
 
 createTidyDataset <- function(dataset) {
-  dataset %>% group_by(subject, activity) %>% summarise(across(starts_with("t") | starts_with("f"), mean))
+  tidyDataset <- dataset %>% group_by(subject, activity) %>% summarise(across(starts_with("t") | starts_with("f"), mean))
 }
